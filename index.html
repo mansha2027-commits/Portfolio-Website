@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Mansha Bhardwaj — strategy, analytics, finance, research and AI portfolio.">
+<title>Mansha Bhardwaj — Strategy × Analytics × AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+:root{
+  --paper:#F6F4EF; --paper2:#ECE8E0; --ink:#17212D; --muted:#68717A;
+  --wine:#295D63; --wine2:#3C7278; --plum:#243746; --rose:#D6E0DE;
+  --gold:#B58B57; --line:rgba(23,33,45,.14); --white:#FFFEFB;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+::selection{background:var(--wine);color:white}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,239,233,.88);backdrop-filter:blur(14px);z-index:50}
+.brand{font-family:"Playfair Display",serif;font-weight:700;font-size:20px}
+.navlinks{display:flex;gap:24px;font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:var(--wine)}
+.navcta{display:flex;gap:10px;align-items:center}
+.pill{border:1px solid var(--line);border-radius:99px;padding:10px 14px;font-size:13px;background:rgba(255,255,255,.42)}
+.pill.fill{background:var(--ink);color:white;border-color:var(--ink)}
+.hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.16fr .84fr;gap:40px;align-items:center;padding:70px 0 65px;position:relative}
+.kicker{font-size:12px;letter-spacing:.19em;text-transform:uppercase;color:var(--wine);font-weight:700}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(64px,9vw,126px);line-height:.78;margin:22px 0 34px;letter-spacing:-.055em}
+.hero h1 i{display:block;color:var(--wine);font-weight:600}
+.hero-copy{max-width:700px;font-size:20px;line-height:1.58;color:var(--muted)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:13px 17px;border-radius:99px;border:1px solid var(--ink);font-size:14px;font-weight:600;transition:.2s}
+.btn.primary{background:var(--ink);color:white}
+.btn:hover{transform:translateY(-2px)}
+.issue-card{position:relative;min-height:590px;border:1px solid var(--line);border-radius:28px;background:#d8c8c4;overflow:hidden;box-shadow:0 26px 70px rgba(44,25,37,.12)}
+.issue-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;filter:saturate(.94) contrast(1.02)}
+.issue-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,15,24,.08) 28%,rgba(22,15,24,.76) 100%)}
+.issue-no{position:absolute;left:24px;top:22px;z-index:3;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:white;background:rgba(33,26,37,.48);backdrop-filter:blur(10px);padding:9px 11px;border-radius:99px;border:1px solid rgba(255,255,255,.18)}
+.cover-line{position:absolute;left:26px;right:26px;bottom:135px;z-index:3;color:white}
+.cover-line span{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:.82;margin-bottom:8px}
+.cover-line strong{font-family:"Playfair Display",serif;font-size:34px;line-height:1.02;font-weight:600}
+.mini-grid{position:absolute;bottom:22px;left:22px;right:22px;display:grid;grid-template-columns:1fr 1fr;gap:8px;z-index:3}
+.mini{padding:13px;border:1px solid rgba(255,255,255,.18);border-radius:15px;background:rgba(30,21,31,.46);backdrop-filter:blur(12px);color:white}
+.mini b{display:block;font-family:"Playfair Display",serif;font-size:24px}.mini span{font-size:10px;color:rgba(255,255,255,.78)}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-block;padding:14px 0;animation:marquee 24s linear infinite;font-size:12px;text-transform:uppercase;letter-spacing:.13em}
+.ticker-track span{margin-right:44px;color:var(--muted)} .ticker-track b{color:var(--wine)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:105px 0}
+.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;align-items:end;margin-bottom:50px}
+.section-no{font-size:12px;letter-spacing:.16em;color:var(--wine);text-transform:uppercase}
+.section-head h2{font-family:"Playfair Display",serif;font-size:clamp(44px,6vw,78px);line-height:.92;margin:0;letter-spacing:-.04em}
+.section-head p{color:var(--muted);line-height:1.7;margin:12px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.28)}
+.stat{padding:25px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
+.stat b{display:block;font-family:"Playfair Display",serif;font-size:40px;color:var(--wine)}.stat span{font-size:12px;color:var(--muted)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.story{padding:28px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.34)}
+.story h3{font-family:"Playfair Display",serif;font-size:28px;margin:0 0 10px}
+.story p,.story li{line-height:1.7;color:var(--muted)}
+.timeline{display:grid;gap:14px}
+.role{display:grid;grid-template-columns:170px 1fr 190px;gap:30px;padding:28px 0;border-top:1px solid var(--line)}
+.role:last-child{border-bottom:1px solid var(--line)}
+.role-date{font-size:12px;color:var(--wine);text-transform:uppercase;letter-spacing:.1em}
+.role h3{margin:0 0 4px;font-family:"Playfair Display",serif;font-size:31px}.role h4{margin:0 0 13px;font-size:14px;color:var(--muted);font-weight:500}
+.role ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.65}
+.role-mark{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);text-align:right}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{border:1px solid var(--line);border-radius:24px;padding:27px;background:rgba(255,255,255,.34);min-height:390px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.project.dark{background:var(--plum);color:white}.project.dark p,.project.dark .meta{color:#d7cedb}
+.project.accent{background:linear-gradient(145deg,#eddde2,#f8f1eb)}
+.project .meta{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--wine)}
+.project h3{font-family:"Playfair Display",serif;font-size:36px;line-height:1.05;margin:17px 0 13px}
+.project p{color:var(--muted);line-height:1.65;margin:0}
+.project .numbers{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px}
+.project .numbers b{display:block;font-family:"Playfair Display",serif;font-size:26px}
+.project .numbers span{font-size:11px;color:var(--muted)}
+.project.dark .numbers span{color:#c8beca}
+.project-link{margin-top:auto;padding-top:26px;font-weight:700;font-size:13px}
+.project-link:hover{color:var(--wine)}
+.workflow{display:flex;gap:5px;align-items:center;margin:24px 0 8px;flex-wrap:wrap}
+.workflow span{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:11px}
+.workflow i{font-style:normal;opacity:.65}
+.ai-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.filmy{min-height:530px;background:
+radial-gradient(circle at 75% 18%,rgba(216,174,189,.38),transparent 30%),
+linear-gradient(135deg,#211a25,#5f2941 70%,#9c4967);color:white}
+.filmy .meta,.filmy p{color:#e9dfe4}
+.filmy-title{font-size:clamp(55px,7vw,92px)!important;max-width:560px}
+.reel{display:flex;gap:7px;margin:26px 0}
+.reel span{width:40px;height:28px;border:1px solid rgba(255,255,255,.3);border-radius:4px}
+.leadership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lead{padding:24px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.33)}
+.lead b{font-family:"Playfair Display",serif;font-size:28px;display:block;margin-bottom:7px}.lead h3{margin:0 0 10px;font-size:15px}.lead p{font-size:13px;line-height:1.6;color:var(--muted)}
+.intermission{padding:0}.intermission-wrap{background:var(--ink);color:white;border-radius:28px;padding:55px;position:relative;overflow:hidden}
+.intermission-wrap:after{content:"INTERMISSION";position:absolute;right:-20px;bottom:-35px;font-family:"Playfair Display",serif;font-size:130px;color:rgba(255,255,255,.04);white-space:nowrap}
+.intermission h2{font-family:"Playfair Display",serif;font-size:55px;margin:0 0 14px}.intermission p{max-width:750px;color:#d6ccd8;line-height:1.7}
+.interests{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.interest{border:1px solid rgba(255,255,255,.18);padding:10px 13px;border-radius:99px;font-size:12px}
+.education{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.edu{padding:25px;border-top:3px solid var(--wine);background:rgba(255,255,255,.32);border-radius:0 0 18px 18px}.edu .year{font-size:11px;color:var(--wine);letter-spacing:.12em;text-transform:uppercase}.edu h3{font-family:"Playfair Display",serif;font-size:27px;margin:9px 0}.edu p{color:var(--muted);line-height:1.6;font-size:13px}
+.skills{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.skill{border:1px solid var(--line);background:rgba(255,255,255,.27);padding:10px 13px;border-radius:99px;font-size:12px}
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:end;border-top:1px solid var(--line);padding-top:60px}
+.contact h2{font-family:"Playfair Display",serif;font-size:clamp(60px,8vw,112px);line-height:.82;margin:0}.contact h2 i{color:var(--wine)}
+.contact-card{border:1px solid var(--line);border-radius:22px;padding:25px;background:rgba(255,255,255,.33)}.contact-card p{color:var(--muted);line-height:1.7}
+.contact-links{display:grid;gap:8px;margin-top:20px}.contact-links a{padding:12px 0;border-top:1px solid var(--line);font-weight:600}
+.footer{display:flex;justify-content:space-between;gap:20px;padding:26px 0 40px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);margin-top:80px}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.on{opacity:1;transform:none}
+@media(max-width:900px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:50px}.issue-card{min-height:500px}
+ .section-head,.ai-grid,.contact{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}
+ .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.story-grid,.work-grid{grid-template-columns:1fr}
+ .role{grid-template-columns:1fr;gap:10px}.role-mark{text-align:left}.leadership-grid,.education{grid-template-columns:1fr}.intermission-wrap{padding:36px 26px}
+}
+@media(max-width:560px){
+ .container{width:min(100% - 26px,1180px)}.navcta .pill:not(.fill){display:none}.hero h1{font-size:64px}
+ .stats{grid-template-columns:1fr}.stat{border-right:0!important;border-bottom:1px solid var(--line)!important}.stat:last-child{border-bottom:0!important}
+ section{padding:78px 0}.issue-card{min-height:540px}.mini-grid{grid-template-columns:1fr 1fr}.quote{font-size:36px}
+}
+
+/* --- V2 refinements: reference-inspired desk navigation + recruiter casebook --- */
+.progress{position:fixed;left:0;top:0;height:3px;background:var(--wine);width:0;z-index:100}
+.focus-toggle{cursor:pointer}
+
+
+
+
+
+
+
+.desk-index{padding:42px 0 18px}
+.desk-label{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:14px}
+.desk-label strong{font-family:"Playfair Display",serif;font-size:22px}
+.desk-label span{font-size:11px;color:var(--muted);letter-spacing:.11em;text-transform:uppercase}
+.desk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.desk-item{position:relative;display:flex;min-height:128px;flex-direction:column;justify-content:space-between;padding:17px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.34);transition:.2s ease}
+.desk-item:hover{transform:translateY(-3px);background:rgba(255,255,255,.64);border-color:rgba(124,41,72,.35)}
+.desk-item small{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--wine)}
+.desk-item b{font-family:"Playfair Display",serif;font-size:21px;line-height:1.05}
+.desk-item i{font-style:normal;font-size:18px;color:var(--wine);align-self:flex-end}
+
+.casebook{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{border:1px solid var(--line);border-radius:22px;padding:24px;background:rgba(255,255,255,.34);min-height:430px;display:flex;flex-direction:column}
+.case .case-tag{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--wine)}
+.case h3{font-family:"Playfair Display",serif;font-size:30px;line-height:1.05;margin:16px 0 20px}
+.case dl{margin:0;display:grid;gap:15px}
+.case dt{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--wine);font-weight:700}
+.case dd{margin:4px 0 0;color:var(--muted);line-height:1.55;font-size:13px}
+.case .case-result{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.metric-chip{padding:7px 9px;border:1px solid var(--line);border-radius:99px;font-size:10px;background:rgba(255,255,255,.4)}
+
+.drawer{margin-top:18px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.28);overflow:hidden}
+.drawer summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-weight:700}
+.drawer summary::-webkit-details-marker{display:none}
+.drawer summary span{font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:var(--wine)}
+.drawer summary:after{content:"＋";font-size:20px;color:var(--wine)}
+.drawer[open] summary:after{content:"−"}
+.drawer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.award{padding:23px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.award:nth-child(3n){border-right:0}
+.award b{font-family:"Playfair Display",serif;font-size:24px;display:block;margin-bottom:6px}
+.award p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+
+.intent-band{margin-top:22px;padding:15px 18px;border:1px solid var(--line);border-radius:15px;display:flex;justify-content:space-between;gap:20px;align-items:center;background:rgba(255,255,255,.28)}
+.intent-band b{font-size:13px}
+.intent-band span{font-size:12px;color:var(--muted)}
+
+.source-note{margin-top:12px;font-size:10px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){
+  .desk-grid{grid-template-columns:1fr 1fr}
+  .casebook{grid-template-columns:1fr}
+  .drawer-grid{grid-template-columns:1fr 1fr}.award:nth-child(3n){border-right:1px solid var(--line)}.award:nth-child(2n){border-right:0}
+}
+@media(max-width:560px){
+  .desk-grid{grid-template-columns:1fr}
+  .drawer-grid{grid-template-columns:1fr}.award{border-right:0!important}
+  .intent-band{align-items:flex-start;flex-direction:column}
+}
+
+
+/* Professional hero refinement */
+.hero{grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.issue-card{
+  min-height:610px;padding:0;background:var(--white);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(23,33,45,.09)
+}
+.issue-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;filter:none}
+.issue-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 0 76%,rgba(13,21,30,.10) 100%)}
+.issue-no{position:absolute;left:18px;top:18px;z-index:3;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:rgba(255,254,251,.86);backdrop-filter:blur(8px);padding:8px 10px;border-radius:99px;border:1px solid rgba(23,33,45,.12)}
+.cover-line,.mini-grid{display:none!important}
+.hero-photo-caption{position:absolute;z-index:3;left:18px;right:18px;bottom:18px;display:flex;justify-content:space-between;gap:14px;align-items:end}
+.hero-photo-caption span{background:rgba(255,254,251,.86);backdrop-filter:blur(8px);border:1px solid rgba(23,33,45,.12);border-radius:12px;padding:9px 11px;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.hero-copy{font-size:19px}
+.intent-band{background:rgba(255,255,255,.42);border-color:rgba(41,93,99,.17)}
+.desk-item:hover{border-color:rgba(41,93,99,.34)}
+.project.accent{background:linear-gradient(145deg,#E7EFED,#F8F5EE)}
+.project.dark{background:#243746}
+.intermission-wrap{background:#17212D!important}
+.stat b,.section-no,.case .case-tag,.case dt,.project .meta,.desk-item small,.desk-item i,.role-date{color:#295D63}
+.btn.primary,.pill.fill{background:#17212D}
+@media(max-width:900px){.hero{gap:28px}.issue-card{min-height:560px}}
+
+</style>
+</head>
+<body><div class="progress" id="progress"></div>
+<div class="container">
+<nav class="nav">
+  <a class="brand" href="#top">MB.</a>
+  <div class="navlinks">
+    <a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#research">Research</a>
+    <a href="#ai-lab">AI Lab</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a>
+  </div>
+  <div class="navcta">
+    <a class="pill" href="https://www.linkedin.com/in/mansha-bhardwaj-12086a200" target="_blank">LinkedIn ↗</a>
+    <a class="pill fill" href="assets/Mansha_Bhardwaj_CV.pdf" target="_blank">View CV</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <div class="kicker">Strategy · Analytics · Finance · AI</div>
+    <h1>Mansha <i>Bhardwaj</i></h1>
+    <p class="hero-copy">I solve business problems with structured analysis, clear communication and hands-on execution — across finance, public-sector consulting, research, leadership and AI-enabled workflows.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#casebook">Explore selected work ↓</a>
+      <a class="btn" href="mailto:mansha2027@mastersunion.org">Get in touch</a>
+    </div>
+    <div class="intent-band">
+      <b>Professional intent</b>
+      <span>Founder’s Office · Strategy · Consulting · Business Analytics</span>
+    </div>
+  </div>
+  <aside class="issue-card" aria-label="Portrait of Mansha Bhardwaj">
+    <img class="issue-photo" src="assets/mansha-portrait.jpg" alt="Portrait of Mansha Bhardwaj">
+    <div class="issue-no">Portfolio · 2026</div>
+    <div class="hero-photo-caption">
+      <span>Strategy · Analytics · AI</span>
+      <span>Gurugram</span>
+    </div>
+  </aside>
+</header>
+</div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span><b>Current:</b> Masters’ Union · PGP Technology & Business Management</span>
+    <span>Strategy</span><span>Financial Analysis</span><span>Policy Research</span><span>AI Automation</span><span>Leadership</span><span>Performing Arts</span>
+    <span><b>Current:</b> Masters’ Union · PGP Technology & Business Management</span>
+    <span>Strategy</span><span>Financial Analysis</span><span>Policy Research</span><span>AI Automation</span><span>Leadership</span><span>Performing Arts</span>
+  </div>
+</div>
+
+
+<div class="container desk-index">
+  <div class="desk-label"><strong>Portfolio index</strong><span>Explore by theme</span></div>
+  <div class="desk-grid">
+    <a class="desk-item" href="#profile"><small>01 · Brief</small><b>Profile</b><i>↘</i></a>
+    <a class="desk-item" href="#casebook"><small>02 · Casebook</small><b>Selected cases</b><i>↘</i></a>
+    <a class="desk-item" href="#research"><small>03 · Research</small><b>Research</b><i>↘</i></a>
+    <a class="desk-item" href="#ai-lab"><small>04 · AI Lab</small><b>AI projects</b><i>↘</i></a>
+    <a class="desk-item creative-only" href="#leadership"><small>05 · Beyond work</small><b>Leadership</b><i>↘</i></a>
+  </div>
+</div>
+
+<main class="container">
+<section id="profile">
+  <div class="section-head reveal">
+    <div><div class="section-no">01 / Profile</div><p>A professional identity built across analysis, consulting, leadership and creative discipline.</p></div>
+    <h2>Analytical by training.<br>Operator by instinct.</h2>
+  </div>
+  <div class="stats reveal">
+    <div class="stat"><b>20+</b><span>NHAI projects supported</span></div>
+    <div class="stat"><b>30%</b><span>faster client onboarding</span></div>
+    <div class="stat"><b>230+</b><span>SDG indicators analysed</span></div>
+    <div class="stat"><b>95+</b><span>members interviewed & onboarded</span></div>
+  </div>
+  <div class="story-grid">
+    <article class="story reveal"><h3>What I bring</h3><p>Strategy and analytics experience across financial analysis, public-sector consulting and cross-functional leadership. My work has included budgeting and forecasting, financial modelling, MIS reporting, policy analytics, benchmarking, client acquisition and stakeholder management.</p></article>
+    <article class="story reveal"><h3>What I’m building toward</h3><p>Roles where rigorous analysis meets real business decisions — strategy, consulting, founder’s office and problem-solving environments that reward ownership, structured thinking and execution.</p></article>
+  </div>
+</section>
+
+
+<section id="casebook">
+  <div class="section-head reveal">
+    <div>
+      <div class="section-no">02 / Selected Casebook</div>
+      <p>Three examples of how I structure ambiguity: diagnose the problem, build the analysis, and move toward an outcome.</p>
+    </div>
+    <h2>Evidence over<br>adjectives.</h2>
+  </div>
+  <div class="casebook">
+    <article class="case reveal">
+      <div class="case-tag">KSSM & Co. · Business Operations</div>
+      <h3>Making financial work more decision-ready.</h3>
+      <dl>
+        <div><dt>Context</dt><dd>Public-sector engagements required tighter budgeting, clearer bid visibility and faster client onboarding across multiple projects.</dd></div>
+        <div><dt>Approach</dt><dd>Used financial analysis, forecasting, variance analysis, MIS dashboards and structured cross-functional coordination.</dd></div>
+        <div><dt>Outcome</dt><dd>Improved spend efficiency, onboarding speed and management visibility — while earning a fast-track promotion within six months.</dd></div>
+      </dl>
+      <div class="case-result"><span class="metric-chip">15% spend optimisation</span><span class="metric-chip">30% faster onboarding</span><span class="metric-chip">40% better bid visibility</span></div>
+    </article>
+
+    <article class="case reveal">
+      <div class="case-tag">NITI Aayog · Policy Analytics</div>
+      <h3>Turning indicator-heavy policy data into usable insight.</h3>
+      <dl>
+        <div><dt>Context</dt><dd>Large SDG datasets had to be translated into evidence that could support inter-ministerial reporting and policy recommendations.</dd></div>
+        <div><dt>Approach</dt><dd>Analysed and benchmarked SDG indicators, supported dashboarding, tracked programme outcomes and synthesised findings for stakeholders.</dd></div>
+        <div><dt>Outcome</dt><dd>Improved reporting efficiency and strengthened the analytical base for programme and policy discussions.</dd></div>
+      </dl>
+      <div class="case-result"><span class="metric-chip">230+ indicators</span><span class="metric-chip">10+ programmes</span><span class="metric-chip">8+ SDGs benchmarked</span></div>
+    </article>
+
+    <article class="case reveal">
+      <div class="case-tag">Sector Map · Online Gaming</div>
+      <h3>Where does value move when regulation deletes a profit pool?</h3>
+      <dl>
+        <div><dt>Question</dt><dd>Where is value moving in Indian online gaming after the 2025 real-money gaming ban, and who is positioned to capture it?</dd></div>
+        <div><dt>Approach</dt><dd>Mapped the value chain and analysed economics, regulation, funding, public sentiment, hiring, AI adoption and global benchmarks.</dd></div>
+        <div><dt>Thesis</dt><dd>Value is migrating toward esports, subscription/cloud gaming and ad- or IAP-funded casual play.</dd></div>
+      </dl>
+      <div class="case-result"><span class="metric-chip">14-page sector map</span><span class="metric-chip">India + global benchmark</span><span class="metric-chip">AI layer included</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-head reveal">
+    <div><div class="section-no">03 / Experience</div><p>Selected roles across finance, consulting and policy.</p></div>
+    <h2>From statements<br>to strategy.</h2>
+  </div>
+  <div class="timeline">
+    <article class="role reveal">
+      <div class="role-date">Oct ’23 – Mar ’26</div>
+      <div><h3>KSSM & Co.</h3><h4>Financial Analyst → Team Leader · Financial Analysis, Public-Sector Consulting & Business Development</h4>
+      <ul><li>Supported financial analysis and bid evaluation across 20+ NHAI projects and 5+ regions.</li><li>Optimised ₹5 lakh+ annual spend by 15% through budgeting, forecasting and variance analysis.</li><li>Accelerated onboarding by 30% and earned a fast-track promotion within six months.</li><li>Built 10+ MIS dashboards and executive reports, improving bid visibility by 40%.</li><li>Strengthened stakeholder alignment across 20+ engagements through structured reviews and reporting.</li></ul></div>
+      <div class="role-mark">Delhi NCR<br>Finance · Consulting</div>
+    </article>
+    <article class="role reveal">
+      <div class="role-date">Aug ’22 – Oct ’22</div>
+      <div><h3>NITI Aayog</h3><h4>SDG Intern · Policy Analytics, Benchmarking & Strategic Insights</h4>
+      <ul><li>Analysed 230+ SDG indicators to support inter-ministerial policy recommendations.</li><li>Improved reporting efficiency by 35% across 10+ development programmes through dashboards.</li><li>Benchmarked 8+ SDGs to assess implementation outcomes and support evidence-based decisions.</li></ul></div>
+      <div class="role-mark">Delhi<br>Policy · Analytics</div>
+    </article>
+    <article class="role reveal">
+      <div class="role-date">Jun ’22 – Aug ’22</div>
+      <div><h3>SAIL</h3><h4>Financial Analysis Intern · Cost Optimisation & Decision Support</h4>
+      <ul><li>Improved budgeting accuracy by 15% through analysis of P&L, balance sheet and cash-flow data.</li><li>Reduced cost variances by 10% by identifying financial gaps through MIS reporting.</li><li>Built financial models and forecasts to support capital planning and management decisions.</li></ul></div>
+      <div class="role-mark">Delhi<br>Finance · Manufacturing</div>
+    </article>
+  </div>
+</section>
+
+<section id="research">
+  <div class="section-head reveal">
+    <div><div class="section-no">04 / Research & Projects</div><p>Business questions translated into structured analyses, sector theses and solutions.</p></div>
+    <h2>Work that starts<br>with a question.</h2>
+  </div>
+  <div class="work-grid">
+    <article class="project dark reveal">
+      <div class="meta">Sector Research · AI in Business · Masters’ Union</div>
+      <h3>Online Gaming:<br>India’s Great Reset</h3>
+      <p>A sector map studying where value moved after India’s real-money gaming ban. The work maps the value chain, player shifts, economics, regulation, funding, public sentiment, jobs, AI adoption and global benchmarks.</p>
+      <div class="numbers"><div><b>17%</b><span>2025 non-RMG growth</span></div><div><b>18–23%</b><span>projected esports CAGR</span></div><div><b>14</b><span>research pages</span></div></div>
+      <a class="project-link" href="assets/Online_Gaming_Sector_Map.pdf" target="_blank">View sector map ↗</a>
+      <div class="source-note">Research scope: value chain, players, economics, policy & regulation, funding, sentiment, jobs, AI and global comparison.</div>
+    </article>
+    <article class="project accent reveal">
+      <div class="meta">Business Plan · Young Entrepreneurs Society · 3rd Place</div>
+      <h3>KAUSHAL</h3>
+      <p>An employment platform designed to connect skilled and unskilled workers with opportunities. The business model was developed through market analysis, gap assessment, segmentation, value proposition design and stakeholder mapping.</p>
+      <div class="numbers"><div><b>3rd</b><span>competition position</span></div><div><b>01</b><span>core employment gap</span></div></div>
+      <div class="project-link">Business model · Market analysis · Segmentation</div>
+    </article>
+  </div>
+</section>
+
+<section id="ai-lab">
+  <div class="section-head reveal">
+    <div><div class="section-no">05 / AI Lab</div><p>Experiments where no-code tools, automation and product thinking become working systems.</p></div>
+    <h2>Built, not just<br>prompted.</h2>
+  </div>
+  <div class="ai-grid">
+    <article class="project filmy reveal">
+      <div class="meta">AI Product · Lovable · Live Project</div>
+      <h3 class="filmy-title">Filmy<br>Act Win</h3>
+      <p>A live web experiment built and deployed on Lovable. The project is presented here as evidence of rapid prototyping and shipping: moving from a concept to a functioning, publicly accessible product experience.</p>
+      <div class="reel" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <a class="project-link" href="https://filmy-act-win.lovable.app/" target="_blank" rel="noopener">Open live project ↗</a>
+    </article>
+    <article class="project dark reveal">
+      <div class="meta">Workflow Automation · Make.com</div>
+      <h3>ARENA OS:<br>Prize Payout Approval</h3>
+      <p>A decision-led automation that captures payout inputs, routes approve/reject logic, records the decision, sends the appropriate notification and returns a final status.</p>
+      <div class="workflow"><span>Input</span><i>→</i><span>Decision</span><i>→</i><span>Sheets</span><i>→</i><span>Email</span><i>→</i><span>Status</span></div>
+      <a class="project-link" href="arena-os.html">View workflow case study →</a>
+    </article>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="section-head reveal">
+    <div><div class="section-no">06 / Leadership & Impact</div><p>Experience leading teams, partnerships, communities and cultural initiatives.</p></div>
+    <h2>Leadership with<br>receipts.</h2>
+  </div>
+  <div class="leadership-grid">
+    <article class="lead reveal"><b>₹5L+</b><h3>AIESEC · Head of Corporate & International Relations</h3><p>Led a 25+ member department, managed accounts including TCS, Taj and Oberoi, interviewed and onboarded 95+ members, and was recognised among the top 1 of 120+ entities nationally.</p></article>
+    <article class="lead reveal"><b>15+</b><h3>Girl Up Imkaan · Head of Public Relations</h3><p>Executed community initiatives in menstrual health and survivor rehabilitation, raised ₹50,000 through corporate partnerships and helped deliver a live session with 15k+ reach.</p></article>
+    <article class="lead reveal"><b>150+</b><h3>AIESEC · SDG Volunteer Mobilisation</h3><p>Mobilised and managed volunteers across SDG-linked programmes while contributing to ₹3 lakh+ in fundraising and community engagement initiatives.</p></article>
+    <article class="lead reveal"><b>10+</b><h3>EduPaper · PD Associate</h3><p>Partnered with NGOs and corporate organisations on paper-recycling initiatives, sustainability awareness sessions and community outreach.</p></article>
+    <article class="lead reveal"><b>15+</b><h3>Student Council · Cultural Head</h3><p>Led school-wide cultural events, cross-functional coordination and end-to-end execution, engaging 500+ students and faculty.</p></article>
+    <article class="lead reveal"><b>National</b><h3>AIESEC Recognition</h3><p>National Award Winner for outstanding performance and organisational contribution, alongside multiple entity-level wins in revenue generation.</p></article>
+  </div>
+</section>
+
+<section class="intermission">
+  <div class="intermission-wrap reveal" style="background:
+      linear-gradient(90deg,rgba(33,26,37,.97) 0%,rgba(33,26,37,.91) 56%,rgba(33,26,37,.22) 100%),
+      url('assets/mansha-portrait.jpg') center 30%/cover no-repeat;">
+    <div class="kicker" style="color:#d8aebd">Intermission / Beyond the CV</div>
+    <h2>Discipline has a creative side.</h2>
+    <p>Six years of Hindustani classical music, competitive dance, choreography and cultural leadership sit alongside finance and strategy. They shape how I perform under pressure, work with teams and communicate with an audience.</p>
+    <div class="interests">
+      <span class="interest">Hindustani Classical Vocal Music · 6-year diploma · Distinction</span>
+      <span class="interest">Competitive Dance · Winner & Finalist</span>
+      <span class="interest">Choreography</span><span class="interest">Social Impact</span>
+      <span class="interest">Culture & Performance</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-head reveal">
+    <div><div class="section-no">07 / Education & Credentials</div><p>Academic consistency, merit recognition and continuing business education.</p></div>
+    <h2>Academic rigor,<br>carried forward.</h2>
+  </div>
+  <div class="education">
+    <article class="edu reveal"><div class="year">2026 – Present · Gurugram</div><h3>Masters’ Union</h3><p>PGP in Technology & Business Management. Awarded the Manoj Kohli Merit-Based Scholarship (10% among 400+ students).</p></article>
+    <article class="edu reveal"><div class="year">2020 – 2023 · Delhi</div><h3>Shaheed Bhagat Singh College, University of Delhi</h3><p>BA (Economics & Commerce), CGPA 8.51. Gold Medalist and Rank 1. AIESEC National Award Winner and inter-college dance winner.</p></article>
+    <article class="edu reveal"><div class="year">DPS Ghaziabad</div><h3>School</h3><p>Class XII: 90.8%, 100/100 in Economics, Top 20%. Class X: 95%, scholarship holder, Top 5%. Merit Scholar for six consecutive years and National Winner, ZEE Social Impact competition.</p></article>
+  </div>
+  <div class="story-grid" style="margin-top:18px">
+    <article class="story reveal"><h3>Certifications</h3><p><b>Financial Modelling and Accounting</b> — Coursera · June 2023<br><b>British Council Language Proficiency</b> — British Council, London · August 2018</p></article>
+    <article class="story reveal"><h3>Capabilities</h3><div class="skills">
+      <span class="skill">Business Strategy</span><span class="skill">Problem Structuring</span><span class="skill">Strategic Planning</span><span class="skill">Policy Analysis</span><span class="skill">Competitive Benchmarking</span><span class="skill">Stakeholder Management</span><span class="skill">Budgeting & Forecasting</span><span class="skill">Financial Modelling</span><span class="skill">Financial Statement Analysis</span><span class="skill">MIS Reporting</span><span class="skill">Dashboarding</span><span class="skill">Data Analysis</span><span class="skill">Data Visualisation</span><span class="skill">Excel</span><span class="skill">PowerPoint</span></div></article>
+  </div>
+
+  <details class="drawer reveal">
+    <summary><span>Achievement drawer</span> Awards, recognition & long-form signals</summary>
+    <div class="drawer-grid">
+      <div class="award"><b>Gold Medalist</b><p>Rank 1 in BA (Economics & Commerce), Shaheed Bhagat Singh College, University of Delhi.</p></div>
+      <div class="award"><b>AIESEC National Award</b><p>Recognised nationally for performance and contribution, with top-entity recognition in revenue generation.</p></div>
+      <div class="award"><b>100/100</b><p>Scored full marks in Economics in the Class XII board examinations.</p></div>
+      <div class="award"><b>6 Years</b><p>Academic merit scholarship recognition across six consecutive years.</p></div>
+      <div class="award"><b>National Winner</b><p>ZEE Social Impact competition recognition during school.</p></div>
+      <div class="award"><b>Performing Arts</b><p>Multiple wins and finalist positions across inter-school and college dance competitions.</p></div>
+    </div>
+  </details>
+
+</section>
+
+<section id="contact">
+  <div class="contact reveal">
+    <div><div class="kicker">End credits / Let’s work together</div><h2>Open to the<br><i>next problem.</i></h2></div>
+    <div class="contact-card">
+      <p>Interested in strategy, consulting, founder’s office and business problem-solving roles where analysis, ownership and execution matter.</p>
+      <div class="contact-links">
+        <a href="mailto:mansha2027@mastersunion.org">mansha2027@mastersunion.org ↗</a>
+        <a href="tel:+919654105541">+91 96541 05541 ↗</a>
+        <a href="https://www.linkedin.com/in/mansha-bhardwaj-12086a200" target="_blank">LinkedIn ↗</a>
+        <a href="assets/Mansha_Bhardwaj_CV.pdf" target="_blank">Download / View CV ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><span>© 2026 Mansha Bhardwaj</span><span>Strategy × Analytics × AI × Leadership</span></footer>
+</main>
+
+<script>
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+
+const progress=document.getElementById('progress');
+function updateProgress(){
+  const h=document.documentElement;
+  const denom=h.scrollHeight-h.clientHeight;
+  progress.style.width=(denom>0?((h.scrollTop/denom)*100):0)+'%';
+}
+document.addEventListener('scroll',updateProgress,{passive:true});
+updateProgress();
+
+</script>
+</body></html>

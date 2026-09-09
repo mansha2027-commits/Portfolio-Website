@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARENA OS — Prize Payout Approval | Mansha Bhardwaj</title>
+<style>
+:root{--ink:#20192b;--paper:#f6f0e9;--wine:#7b2948;--lilac:#c8b7df;--line:rgba(32,25,43,.16);--muted:#6e6672}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:auto;padding:40px 22px 90px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+a{color:inherit}.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine)}
+h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,84px);line-height:.95;max-width:850px;margin:42px 0 22px}
+.lede{max-width:760px;font-size:20px;line-height:1.6;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 50px}.tag{border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-size:13px;background:#fff8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#fff9;border:1px solid var(--line);border-radius:20px;padding:24px}
+.card h2{font-family:Georgia,serif;font-size:28px;margin:0 0 10px}.card p,.card li{line-height:1.65;color:var(--muted)}
+.flow{margin:36px 0 50px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+.node{min-height:138px;border-radius:18px;padding:16px;background:white;border:1px solid var(--line);position:relative}
+.node b{display:block;margin-bottom:8px}.node small{color:var(--muted);line-height:1.4}.node:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);z-index:2;background:var(--paper);width:18px;text-align:center;color:var(--wine);font-weight:700}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.branch div{padding:18px;border:1px solid var(--line);border-radius:15px}.approve{background:#eef7f0}.reject{background:#fff0f2}
+.footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted)}
+@media(max-width:760px){.grid,.branch{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.node:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%)}}
+</style>
+</head>
+<body><main>
+<div class="top"><div class="eyebrow">AI / Automation Case Study</div><a href="index.html#ai-lab">← Back to portfolio</a></div>
+<h1>ARENA OS:<br>Prize Payout Approval</h1>
+<p class="lede">A Make.com workflow that turns a manual prize-payout decision into a structured approval system: capture payout inputs, route the decision, record the outcome, notify stakeholders, and return a clean final status.</p>
+<div class="tags"><span class="tag">Make.com</span><span class="tag">Workflow Automation</span><span class="tag">Google Sheets</span><span class="tag">Email Automation</span><span class="tag">Decision Logic</span></div>
+
+<div class="grid">
+  <section class="card"><h2>The problem</h2><p>Prize payouts involve multiple hand-offs: the payout details need to be captured accurately, an approver must make a decision, the decision needs an audit trail, and the relevant recipient needs to be informed. Manual coordination creates delays and inconsistent records.</p></section>
+  <section class="card"><h2>The system</h2><p>The workflow accepts a payout ID, tournament ID, winner, amount, decision, approver email and recipient email. It then branches into an approve/reject flow and completes the corresponding record-and-notification actions.</p></section>
+</div>
+
+<div class="flow">
+  <div class="node"><b>01 · Inputs</b><small>Payout ID, tournament, winner, amount and decision.</small></div>
+  <div class="node"><b>02 · Decision</b><small>Approve / reject routing with conditional logic.</small></div>
+  <div class="node"><b>03 · Record</b><small>Append a structured outcome to the payout sheet.</small></div>
+  <div class="node"><b>04 · Notify</b><small>Send the appropriate approval or hold email.</small></div>
+  <div class="node"><b>05 · Return</b><small>Return final status, payout ID and result message.</small></div>
+</div>
+
+<section class="card">
+<h2>Two controlled outcomes</h2>
+<div class="branch">
+  <div class="approve"><b>Approved</b><p>Writes an approved payout record, triggers the approval communication and returns an APPROVED status.</p></div>
+  <div class="reject"><b>Rejected / Hold</b><p>Writes a rejected payout record, sends a review/hold communication and returns a REJECTED status.</p></div>
+</div>
+</section>
+
+<div class="grid" style="margin-top:18px">
+  <section class="card"><h2>What it demonstrates</h2><ul><li>Process mapping and workflow design</li><li>Conditional business logic</li><li>Automated record keeping</li><li>Cross-tool integration</li><li>Operational controls and auditability</li></ul></section>
+  <section class="card"><h2>Why it matters</h2><p>The project translates an operational process into a repeatable system. Instead of treating automation as a collection of disconnected actions, the flow is designed around a business decision and its downstream consequences.</p></section>
+</div>
+<div class="footer">Mansha Bhardwaj · Selected AI / automation work</div>
+</main></body></html>
